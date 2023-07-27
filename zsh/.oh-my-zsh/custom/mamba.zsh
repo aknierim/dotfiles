@@ -1,6 +1,6 @@
 function mambas() {
   environments=$(eval mamba env list | rg -v '^[\#|base]' | cut -d ' ' -f 1)
-  items=("base" "deactivate" ${environments[@]})
+  items=("base" "deactivate" $environments)
 
   # config for fuzzy finder selection window
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt="🐍 Mamba Config  " --height=~50% --info=inline --layout=reverse --border --exit-0)
