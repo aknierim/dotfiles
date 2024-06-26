@@ -45,3 +45,4 @@ if [ -f "$HOME/.local/conda/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+eval "$(atuin init zsh)"
