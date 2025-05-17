@@ -1,5 +1,5 @@
 function mambas() {
-  environments=$(eval mamba env list | rg -v '(^[\#])|^(base)\b' | cut -d ' ' -f 1)
+  environments=$(eval mamba env list | awk 'NR>3 {print $1}')
   items=("base" "deactivate" $environments)
 
   # config for fuzzy finder selection window
